@@ -107,15 +107,34 @@ int main(int argc, char *argv[]) {
                     fprintf(stderr, "Option not implemented (sorry)\n");
                     return 1;
                 case 's':
-                    // TODO:
-                    if (i + 1 < argc) {
-                        verse_llist* verses = searchByText(vrsn, argv[++i]);
-                        print_verses(verses, 2);
-                    } else {
-                        fprintf(stderr, "Error: -s requires a search argument\n");
+                    // The search function of chaos
+                    char** terms = NULL;
+                    int num_terms = 0;
+
+                    if (i + 1 >= argc || argv[i+1][0] == '-') {
+                        fprintf(stderr, "Error: -s requires at least one search argument\n");
                         return 1;
                     }
-                    return 1;
+
+                    // Right here we're collecting all the arguments before the next flag
+                    while (++i < argc && argv[i][0] != '-') {
+                        debug_print("processing search term\n", NULL);
+                        char** temp = realloc(terms, (num_terms + 1) * sizeof(char*));
+                        if (temp == NULL) {
+                            fprintf(stderr, "Memory allocation failed\n");
+                            free(terms);
+                            return 1;
+                        }
+                        terms = temp;
+                        terms[num_terms] = argv[i];
+                        num_terms++;
+                    }
+
+                    verse_llist* verses = searchByText(vrsn, terms);
+                    print_verses(verses, 2);
+                    free(terms);
+
+                    return 0;
                 case 'V':
                     if (i + 1 < argc) {
                         version* v = versionInfo(argv[++i]);

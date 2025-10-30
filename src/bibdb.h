@@ -253,13 +253,13 @@ version* versionInfo(const char* v_shorthand) {
     return v;
 }
 
-verse_llist* searchByText(const char* vrsn, const char* search) {
+verse_llist* searchByText(const char* vrsn, char** search_terms) {
     // Return verse llist from text search
-    debug_print("function call: searchByText(version=%s, search=%s)\n", vrsn, search);
+    debug_print("function call: searchByText\n", vrsn);
 
     verse_llist* head = NULL;
     char* err_msg = NULL;
-    char sql[256];
+    char sql[512];
 
     // Open DB
     int rc = sqlite3_open(db_location, &db);
@@ -270,9 +270,23 @@ verse_llist* searchByText(const char* vrsn, const char* search) {
     }
 
     // Create SQL statement
-    // TODO: split search by word to search more generally
-    snprintf(sql, sizeof(sql), "SELECT * FROM bible_text WHERE version='%s' AND UPPER(text) LIKE UPPER('%%%s%%')", 
-             vrsn, search);
+    int len = snprintf(sql, sizeof(sql), "SELECT * FROM bible_text WHERE version='%s'", 
+             vrsn);
+    
+    int i = 0;
+    if (search_terms == NULL) {
+        fprintf(stderr, "No search terms provided\n");
+        return NULL;
+    }
+    
+    for (; search_terms[i] != NULL; i++) {
+        len += snprintf(sql + len, sizeof(sql) - len, " AND UPPER(text) LIKE UPPER('%%%s%%')",
+                search_terms[i]);
+        if (len >= sizeof(sql)) {
+            fprintf(stderr, "SQL query too long\n");
+            return NULL;
+        }
+    }
 
     rc = sqlite3_exec(db, sql, callback_verses, &head, &err_msg);
     if (rc != SQLITE_OK) {
