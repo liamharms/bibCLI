@@ -23,3 +23,8 @@ v 0.0.5
 - Support for commentaries, primarily targeting Early Church fathers and Reformers
 - Support for confessions and creeds
 - A TUI for no-arg calls (i.e. `./bibCLI`)
+
+## Credits
+- Huge thanks to [KastningBrandon](https://github.com/KastningBrandon) for the [strong's csv](https://github.com/KastningBrandon/python3-tools-for-strongs-bible-dictionary_03_2024/blob/master/data_processed/strongs.csv).
+- Even bigger thanks to the crosswire team for their [SWORD project](https://www.crosswire.org/sword/index.jsp). Getting translations, especially with Strong's numbering, would've been bordline impossible without them.
+ - I think, after looking through the versions I used, I shouldn't run into copyright or license issues 😅. Please let me know if I do.
