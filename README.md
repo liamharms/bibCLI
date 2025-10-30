@@ -9,7 +9,7 @@ v 0.0.5
 
 ## Installation
 ### On Linux:
-1. `git clone https://liamharms/bibCLI`
+1. `git clone https://github.com/liamharms/bibCLI`
 2. `cd bibCLI`
 3. `make`
 ### Other Systems:
