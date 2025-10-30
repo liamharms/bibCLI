@@ -1,0 +1,398 @@
+{
+    "Old Testament": {
+        "Genesis": {
+            "chapters": 50,
+            "shorthand": "Gen",
+            "pysword_name": "Genesis"
+        },
+        "Exodus": {
+            "chapters": 40,
+            "shorthand": "Exo",
+            "pysword_name": "Exodus"
+        },
+        "Leviticus": {
+            "chapters": 27,
+            "shorthand": "Lev",
+            "pysword_name": "Leviticus"
+        },
+        "Numbers": {
+            "chapters": 36,
+            "shorthand": "Num",
+            "pysword_name": "Numbers"
+        },
+        "Deuteronomy": {
+            "chapters": 34,
+            "shorthand": "Deu",
+            "pysword_name": "Deuteronomy"
+        },
+        "Joshua": {
+            "chapters": 24,
+            "shorthand": "Jos",
+            "pysword_name": "Joshua"
+        },
+        "Judges": {
+            "chapters": 21,
+            "shorthand": "Jdg",
+            "pysword_name": "Judges"
+        },
+        "Ruth": {
+            "chapters": 4,
+            "shorthand": "Rut",
+            "pysword_name": "Ruth"
+        },
+        "1 Samuel": {
+            "chapters": 31,
+            "shorthand": "1Sa",
+            "pysword_name": "I Samuel"
+        },
+        "2 Samuel": {
+            "chapters": 24,
+            "shorthand": "2Sa",
+            "pysword_name": "II Samuel"
+        },
+        "1 Kings": {
+            "chapters": 22,
+            "shorthand": "1Ki",
+            "pysword_name": "I Kings"
+        },
+        "2 Kings": {
+            "chapters": 25,
+            "shorthand": "2Ki",
+            "pysword_name": "II Kings"
+        },
+        "1 Chronicles": {
+            "chapters": 29,
+            "shorthand": "1Ch",
+            "pysword_name": "I Chronicles"
+        },
+        "2 Chronicles": {
+            "chapters": 36,
+            "shorthand": "2Ch",
+            "pysword_name": "II Chronicles"
+        },
+        "Ezra": {
+            "chapters": 10,
+            "shorthand": "Ezr",
+            "pysword_name": "Ezra"
+        },
+        "Nehemiah": {
+            "chapters": 13,
+            "shorthand": "Neh",
+            "pysword_name": "Nehemiah"
+        },
+        "Esther": {
+            "chapters": 10,
+            "shorthand": "Est",
+            "pysword_name": "Esther"
+        },
+        "Job": {
+            "chapters": 42,
+            "shorthand": "Job",
+            "pysword_name": "Job"
+        },
+        "Psalms": {
+            "chapters": 150,
+            "shorthand": "Psa",
+            "pysword_name": "Psalms"
+        },
+        "Proverbs": {
+            "chapters": 31,
+            "shorthand": "Pro",
+            "pysword_name": "Proverbs"
+        },
+        "Ecclesiastes": {
+            "chapters": 12,
+            "shorthand": "Ecc",
+            "pysword_name": "Ecclesiastes"
+        },
+        "Song of Solomon": {
+            "chapters": 8,
+            "shorthand": "Sng",
+            "pysword_name": "Song of Solomon"
+        },
+        "Isaiah": {
+            "chapters": 66,
+            "shorthand": "Isa",
+            "pysword_name": "Isaiah"
+        },
+        "Jeremiah": {
+            "chapters": 52,
+            "shorthand": "Jer",
+            "pysword_name": "Jeremiah"
+        },
+        "Lamentations": {
+            "chapters": 5,
+            "shorthand": "Lam",
+            "pysword_name": "Lamentations"
+        },
+        "Ezekiel": {
+            "chapters": 48,
+            "shorthand": "Ezk",
+            "pysword_name": "Ezekiel"
+        },
+        "Daniel": {
+            "chapters": 12,
+            "shorthand": "Dan",
+            "pysword_name": "Daniel"
+        },
+        "Hosea": {
+            "chapters": 14,
+            "shorthand": "Hos",
+            "pysword_name": "Hosea"
+        },
+        "Joel": {
+            "chapters": 3,
+            "shorthand": "Jol",
+            "pysword_name": "Joel"
+        },
+        "Amos": {
+            "chapters": 9,
+            "shorthand": "Amo",
+            "pysword_name": "Amos"
+        },
+        "Obadiah": {
+            "chapters": 1,
+            "shorthand": "Oba",
+            "pysword_name": "Obadiah"
+        },
+        "Jonah": {
+            "chapters": 4,
+            "shorthand": "Jon",
+            "pysword_name": "Jonah"
+        },
+        "Micah": {
+            "chapters": 7,
+            "shorthand": "Mic",
+            "pysword_name": "Micah"
+        },
+        "Nahum": {
+            "chapters": 3,
+            "shorthand": "Nam",
+            "pysword_name": "Nahum"
+        },
+        "Habakkuk": {
+            "chapters": 3,
+            "shorthand": "Hab",
+            "pysword_name": "Habakkuk"
+        },
+        "Zephaniah": {
+            "chapters": 3,
+            "shorthand": "Zep",
+            "pysword_name": "Zephaniah"
+        },
+        "Haggai": {
+            "chapters": 2,
+            "shorthand": "Hag",
+            "pysword_name": "Haggai"
+        },
+        "Zechariah": {
+            "chapters": 14,
+            "shorthand": "Zec",
+            "pysword_name": "Zechariah"
+        },
+        "Malachi": {
+            "chapters": 4,
+            "shorthand": "Mal",
+            "pysword_name": "Malachi"
+        }
+    },
+    "Apocrypha": {
+        "Tobit": {
+            "chapters": 14,
+            "shorthand": "Tob",
+            "pysword_name": "Tobit"
+        },
+        "Judith": {
+            "chapters": 16,
+            "shorthand": "Jdt",
+            "pysword_name": "Judith"
+        },
+        "Additions to Esther": {
+            "chapters": 10,
+            "shorthand": "Aes",
+            "pysword_name": "Additions to Esther"
+        },
+        "Wisdom of Solomon": {
+            "chapters": 19,
+            "shorthand": "Wis",
+            "pysword_name": "Wisdom of Solomon"
+        },
+        "Sirach (Ecclesiasticus)": {
+            "chapters": 51,
+            "shorthand": "Sir",
+            "pysword_name": "Sirach"
+        },
+        "Baruch": {
+            "chapters": 6,
+            "shorthand": "Bar",
+            "pysword_name": "Baruch"
+        },
+        "Letter of Jeremiah": {
+            "chapters": 1,
+            "shorthand": "Let",
+            "pysword_name": "Letter of Jeremiah"
+        },
+        "Prayer of Azariah and Song of the Three Holy Children": {
+            "chapters": 1,
+            "shorthand": "Pra",
+            "pysword_name": "Prayer of Azariah"
+        },
+        "Susanna": {
+            "chapters": 1,
+            "shorthand": "Sus",
+            "pysword_name": "Susanna"
+        },
+        "Bel and the Dragon": {
+            "chapters": 1,
+            "shorthand": "Bel",
+            "pysword_name": "Bel and the Dragon"
+        },
+        "1 Maccabees": {
+            "chapters": 16,
+            "shorthand": "1Ma",
+            "pysword_name": "I Maccabees"
+        },
+        "2 Maccabees": {
+            "chapters": 15,
+            "shorthand": "2Ma",
+            "pysword_name": "II Maccabees"
+        }
+    },
+    "New Testament": {
+        "Matthew": {
+            "chapters": 28,
+            "shorthand": "Mat",
+            "pysword_name": "Matthew"
+        },
+        "Mark": {
+            "chapters": 16,
+            "shorthand": "Mrk",
+            "pysword_name": "Mark"
+        },
+        "Luke": {
+            "chapters": 24,
+            "shorthand": "Luk",
+            "pysword_name": "Luke"
+        },
+        "John": {
+            "chapters": 21,
+            "shorthand": "Jhn",
+            "pysword_name": "John"
+        },
+        "Acts": {
+            "chapters": 28,
+            "shorthand": "Act",
+            "pysword_name": "Acts"
+        },
+        "Romans": {
+            "chapters": 16,
+            "shorthand": "Rom",
+            "pysword_name": "Romans"
+        },
+        "1 Corinthians": {
+            "chapters": 16,
+            "shorthand": "1Co",
+            "pysword_name": "I Corinthians"
+        },
+        "2 Corinthians": {
+            "chapters": 13,
+            "shorthand": "2Co",
+            "pysword_name": "II Corinthians"
+        },
+        "Galatians": {
+            "chapters": 6,
+            "shorthand": "Gal",
+            "pysword_name": "Galatians"
+        },
+        "Ephesians": {
+            "chapters": 6,
+            "shorthand": "Eph",
+            "pysword_name": "Ephesians"
+        },
+        "Philippians": {
+            "chapters": 4,
+            "shorthand": "Php",
+            "pysword_name": "Philippians"
+        },
+        "Colossians": {
+            "chapters": 4,
+            "shorthand": "Col",
+            "pysword_name": "Colossians"
+        },
+        "1 Thessalonians": {
+            "chapters": 5,
+            "shorthand": "1Th",
+            "pysword_name": "I Thessalonians"
+        },
+        "2 Thessalonians": {
+            "chapters": 3,
+            "shorthand": "2Th",
+            "pysword_name": "II Thessalonians"
+        },
+        "1 Timothy": {
+            "chapters": 6,
+            "shorthand": "1Ti",
+            "pysword_name": "I Timothy"
+        },
+        "2 Timothy": {
+            "chapters": 4,
+            "shorthand": "2Ti",
+            "pysword_name": "II Timothy"
+        },
+        "Titus": {
+            "chapters": 3,
+            "shorthand": "Tit",
+            "pysword_name": "Titus"
+        },
+        "Philemon": {
+            "chapters": 1,
+            "shorthand": "Phm",
+            "pysword_name": "Philemon"
+        },
+        "Hebrews": {
+            "chapters": 13,
+            "shorthand": "Heb",
+            "pysword_name": "Hebrews"
+        },
+        "James": {
+            "chapters": 5,
+            "shorthand": "Jas",
+            "pysword_name": "James"
+        },
+        "1 Peter": {
+            "chapters": 5,
+            "shorthand": "1Pe",
+            "pysword_name": "I Peter"
+        },
+        "2 Peter": {
+            "chapters": 3,
+            "shorthand": "2Pe",
+            "pysword_name": "II Peter"
+        },
+        "1 John": {
+            "chapters": 5,
+            "shorthand": "1Jn",
+            "pysword_name": "I John"
+        },
+        "2 John": {
+            "chapters": 1,
+            "shorthand": "2Jn",
+            "pysword_name": "II John"
+        },
+        "3 John": {
+            "chapters": 1,
+            "shorthand": "3Jn",
+            "pysword_name": "III John"
+        },
+        "Jude": {
+            "chapters": 1,
+            "shorthand": "Jud",
+            "pysword_name": "Jude"
+        },
+        "Revelation": {
+            "chapters": 22,
+            "shorthand": "Rev",
+            "pysword_name": "Revelation of John"
+        }
+    }
+}
