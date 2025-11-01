@@ -124,7 +124,30 @@ static int callback_versionInfo(void* passin, int count, char **data, char **col
     return 0;
 }
 
-static int callback_textSearch(void* passin, int count, char **data, char **columns) {
+static int callback_one_strongs(void* passin, int count, char **data, char **columns) {
+    // Sets the passed in variable (must be a strongsnum*) to the strongs number
+    
+    // Data is of form
+    // +----+------+-----------------+------------+------------+
+    // | id | word | transliteration | definition | derivation |
+    // +----+------+-----------------+------------+------------+
+
+    strongsnum** s = (strongsnum**)passin;
+    strongsnum* newstrongs = (strongsnum*)malloc(sizeof(strongsnum));
+
+    newstrongs->lang = data[0][0];
+    newstrongs->num = atoi( memmove(data[0], data[0]+1, strlen(data[0])) );
+    newstrongs->word = strdup(data[1]);
+    if (data[2] != NULL) {
+        newstrongs->transliteration = strdup(data[2]);
+    } else {
+        newstrongs->transliteration = NULL;
+    }
+    newstrongs->definition = strdup(data[3]);
+    newstrongs->derivation = strdup(data[4]);
+
+    *s = newstrongs;
+
     return 0;
 }
 
@@ -298,4 +321,43 @@ verse_llist* searchByText(const char* vrsn, char** search_terms) {
 
     sqlite3_close(db);
     return head;
+}
+
+strongsnum* queryStrongs(const char* strongs) {
+
+    debug_print("function call: queryStrongs(strongs=%s)\n",strongs);
+
+    strongsnum* s = NULL;
+    char* err_msg = NULL;
+    char sql[256];
+
+    // Open DB
+    int rc = sqlite3_open(db_location, &db);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+        sqlite3_close(db);
+        return NULL;
+    }
+
+    // Create SQL statement
+    snprintf(sql, sizeof(sql), "SELECT * FROM strongs WHERE UPPER(id) = UPPER('%s') LIMIT 1;", 
+             strongs);
+    
+    // Execute SQL statement with text as the data variable
+    rc = sqlite3_exec(db, sql, callback_one_strongs, &s, &err_msg);
+    if (rc != SQLITE_OK) {
+        fprintf(stderr, "SQL error: %s\n", err_msg);
+        sqlite3_free(err_msg);
+        sqlite3_close(db);
+        return NULL;
+    }
+    
+    sqlite3_close(db);
+    
+    if (s == NULL) {
+        fprintf(stderr, "No strongs number found\n");
+        return NULL;
+    }
+    
+    return s;
 }

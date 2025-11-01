@@ -53,6 +53,22 @@ void print_version_info(version* v) {
     printf("Includes Apocrypha: %s\n", v->apocrypha ? "Yes" : "No");
 }
 
+void print_strongs_info(strongsnum* s) {
+    if (s == NULL) {
+        printf("No Strong's information available.\n");
+        return;
+    }
+    printf("ID: %c%d\n", s->lang, s->num);
+    printf("Word: %s\n", s->word);
+    if (s->transliteration != NULL) {
+        printf("Transliteration: %s\n", s->transliteration);
+    }
+    printf("Definition: %s\n", s->definition);
+    if (s->derivation != NULL) {
+        printf("Derivation: %s\n", s->derivation);
+    }
+}
+
 void print_verses(verse_llist* vl, int show_nums) {
     verse_llist* current = vl;
         while (current != NULL) {
@@ -80,7 +96,7 @@ int main(int argc, char *argv[]) {
 
     if (argc==1) {
         printf("No arguments provided.\n");
-        print_help(argv[0]);
+        printf("See %s -h for help.\n", argv[0]);
         return 0;
     }
 
@@ -88,10 +104,11 @@ int main(int argc, char *argv[]) {
     for (int i=1; i<argc; i++) {
         if(argv[i][0] == '-') {
             switch(argv[i][1]) {
-                case 'h':
+                case 'h': {
                     print_help(argv[0]);
                     return 0;
-                case 'v':
+                }
+                case 'v': {
                     if (i + 1 < argc) {
                         vrsn = argv[++i];
                     } else {
@@ -99,14 +116,17 @@ int main(int argc, char *argv[]) {
                         return 1;
                     }
                     break;
-                case 'n':
+                }
+                case 'n': {
                     show_nums = true;
                     break;
-                case 'N':
+                }
+                case 'N': {
                     // TODO:
                     fprintf(stderr, "Option not implemented (sorry)\n");
                     return 1;
-                case 's':
+                }
+                case 's': {
                     // The search function of chaos
                     char** terms = NULL;
                     int num_terms = 0;
@@ -135,7 +155,8 @@ int main(int argc, char *argv[]) {
                     free(terms);
 
                     return 0;
-                case 'V':
+                }
+                case 'V': {
                     if (i + 1 < argc) {
                         version* v = versionInfo(argv[++i]);
                         print_version_info(v);
@@ -148,15 +169,23 @@ int main(int argc, char *argv[]) {
                         fprintf(stderr, "Error: -V requires a version argument\n");
                         return 1;
                     }
-                    return 1;
-                case 'S':
-                    // TODO:
-                    fprintf(stderr, "Option not implemented (sorry)\n");
-                    return 1;
-                default:
+                    return 0;
+                }
+                case 'S': {
+                    if (i + 1 < argc) {
+                        strongsnum* s = queryStrongs(argv[++i]);
+                        print_strongs_info(s);
+                    } else {
+                        fprintf(stderr, "Error: -S requires an argument\n");
+                        return 1;
+                    }
+                    return 0;
+                }
+                default: {
                     fprintf(stderr, "Unknown option: %s\n", argv[i]);
                     print_help(argv[0]);
                     return 1;
+                }
             }
         }
         else {
@@ -172,7 +201,7 @@ int main(int argc, char *argv[]) {
 
     if (pos_argc < 3) {
         fprintf(stderr, "Not enough positional arguments provided\n");
-        print_help(argv[0]);
+        printf("See %s -h for help.\n", argv[0]);
         free(pos_argv);
         return 1;
     }

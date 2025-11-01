@@ -21,6 +21,15 @@ typedef struct {
 } book;
 
 typedef struct {
+    char lang;
+    int num;
+    char* word;
+    char* transliteration;
+    char* definition;
+    char* derivation;
+} strongsnum;
+
+typedef struct {
     char* shorthand;
     char* name;
     bool strongs;
@@ -31,6 +40,11 @@ typedef struct vllist {
     verse* verse;
     struct vllist* next;
 } verse_llist;
+
+typedef struct strllist {
+    strongsnum* strongs;
+    struct strllist* next;
+} strongs_llist;
 
 verse* createVerse(const char* book, const int chapter, const int verse_num, const char* text) {
     verse* v = (verse*)malloc(sizeof(verse));
@@ -56,3 +70,4 @@ verse* createVerse(const char* book, const int chapter, const int verse_num, con
 
     return v;
 }
+
